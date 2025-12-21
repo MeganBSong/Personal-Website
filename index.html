@@ -220,6 +220,9 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -ms-interpolation-mode: bicubic;
         }
 
         .profile-photo-placeholder {
@@ -306,6 +309,9 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.7s ease;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -ms-interpolation-mode: bicubic;
         }
 
         .gallery-item:hover img {
@@ -490,6 +496,9 @@
             border-radius: 12px;
             transform: scale(0.95);
             transition: transform 0.4s ease;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: high-quality;
+            -ms-interpolation-mode: bicubic;
         }
 
         .lightbox.active img {
@@ -953,12 +962,59 @@
                 </div>
 
                 <div class="video-item scroll-reveal">
-                    <div class="video-placeholder">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                        </svg>
-                        <span>Add YouTube Video</span>
+                    <iframe 
+                        src="https://www.youtube.com/embed/9WRXDiZ5jfw?si=KaWGfWE09HDK_YaU" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-info">
+                        <h3>Performance Title</h3>
+                        <p>Composer • Date</p>
                     </div>
+                </div>
+
+                <div class="video-item scroll-reveal">
+                    <iframe 
+                        src="https://www.youtube.com/embed/7o_Swhs1Rng?si=iNOFjKrSlAGa0RT6" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-info">
+                        <h3>Performance Title</h3>
+                        <p>Composer • Date</p>
+                    </div>
+                </div>
+
+                <div class="video-item scroll-reveal">
+                    <iframe 
+                        src="https://www.youtube.com/embed/R9A09xz14EI?si=RUYXeok0zx59n31q" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-info">
+                        <h3>Performance Title</h3>
+                        <p>Composer • Date</p>
+                    </div>
+                </div>
+
+                <div class="video-item scroll-reveal">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Y_aiCm7r_o8?si=olj1LYGk6pSeAjVF" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
                     <div class="video-info">
                         <h3>Performance Title</h3>
                         <p>Composer • Date</p>
