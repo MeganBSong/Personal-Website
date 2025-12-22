@@ -448,6 +448,111 @@
             opacity: 0.7;
         }
 
+        /* Swimming Section */
+        #swimming {
+            background: linear-gradient(180deg, #E8E3DB 0%, var(--color-cream) 100%);
+        }
+
+        .swim-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 2rem auto 0;
+        }
+
+        .swim-item {
+            display: flex;
+            gap: 2rem;
+            background: var(--color-warm-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .swim-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+
+        .swim-info-panel {
+            flex: 0 0 350px;
+            padding: 2rem;
+            background: var(--color-warm-white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .swim-info-panel h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .swim-info-panel .info-row {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(44, 44, 44, 0.1);
+        }
+
+        .swim-info-panel .info-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .swim-info-panel .info-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-terracotta);
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        .swim-info-panel .info-value {
+            font-size: 1rem;
+            color: var(--color-charcoal);
+            line-height: 1.5;
+        }
+
+        .swim-video-container {
+            flex: 1;
+            position: relative;
+            background: var(--color-charcoal);
+            min-height: 400px;
+        }
+
+        .swim-video-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .swim-item {
+                flex-direction: column;
+            }
+
+            .swim-info-panel {
+                flex: none;
+            }
+
+            .swim-video-container {
+                min-height: 300px;
+            }
+
+            .swim-video-container iframe {
+                min-height: 300px;
+            }
+        }
+
         .video-placeholder svg {
             width: 64px;
             height: 64px;
@@ -754,6 +859,7 @@
             <li><a href="#introduction">Introduction</a></li>
             <li><a href="#art">Art</a></li>
             <li><a href="#cello">Cello</a></li>
+            <li><a href="#swimming">Swimming</a></li>
         </ul>
     </nav>
 
@@ -771,10 +877,11 @@
             <div class="decorative-line"></div>
             <p>
                 Hello, my name is Megan Song, an 8th grader at Mansfield Middle School.
-                I am a student with deep interests in robotics, arts, music, and swimming.
-                I love exploring new interests and expressing my ideas in both music and art.
-                I am a swimmer and a track runner.
-                Welcome to my website--I'm excited to share what I've been working on!
+                I love exploring new interests and expressing my ideas through multiple avenues 
+                such as art and crafts and music. Specifically, I have deep interests in robotics
+                and the sciences. Outside of school, I am a swimmer and a track runner, which keeps
+                me active and healthy. Welcome to my website--I'm excited to share what I've been 
+                working on and my progress in these various areas!
             </p>
         </div>
     </section>
@@ -1081,6 +1188,100 @@
                     <div class="video-info">
                         <h3>Performance Title</h3>
                         <p>Composer • Date</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Swimming Section -->
+    <section id="swimming">
+        <div class="gallery-container">
+            <p class="section-subtitle">Competitions</p>
+            <h2 class="section-title">Swimming</h2>
+            
+            <div class="swim-gallery">
+                <!-- 
+                    ADD YOUR SWIMMING VIDEOS HERE
+                    Copy this template for each video:
+                    
+                    <div class="swim-item scroll-reveal"
+                         data-event="Event Name"
+                         data-meet="Meet Name"
+                         data-location="Location"
+                         data-date="Date"
+                         data-time="Your Time"
+                         data-notes="Additional notes">
+                        <div class="swim-info-panel">
+                            <h3>Event Name</h3>
+                            <div class="info-row">
+                                <div class="info-label">Meet</div>
+                                <div class="info-value">Meet Name</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Location</div>
+                                <div class="info-value">Location</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Date</div>
+                                <div class="info-value">Date</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Time</div>
+                                <div class="info-value">Your Time</div>
+                            </div>
+                            <div class="info-row" style="display: none;">
+                                <div class="info-label">Notes</div>
+                                <div class="info-value">Additional notes</div>
+                            </div>
+                        </div>
+                        <div class="swim-video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/VIDEO_ID" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                -->
+                
+                <!-- Example swim item - replace with your actual videos -->
+                <div class="swim-item scroll-reveal"
+                     data-event="100m Freestyle"
+                     data-meet="Example Meet"
+                     data-location="Example Location"
+                     data-date="Example Date"
+                     data-time="1:23.45"
+                     data-notes="">
+                    <div class="swim-info-panel">
+                        <h3>100m Freestyle</h3>
+                        <div class="info-row">
+                            <div class="info-label">Meet</div>
+                            <div class="info-value">Example Meet</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Location</div>
+                            <div class="info-value">Example Location</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Date</div>
+                            <div class="info-value">Example Date</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Time</div>
+                            <div class="info-value">1:23.45</div>
+                        </div>
+                    </div>
+                    <div class="swim-video-container">
+                        <div class="video-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                            </svg>
+                            <span>Add YouTube Video</span>
+                        </div>
                     </div>
                 </div>
             </div>
