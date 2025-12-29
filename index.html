@@ -276,7 +276,7 @@
         }
 
         .art-subsection {
-            margin-bottom: 5rem;
+            margin-bottom: 8rem;
         }
 
         .art-subsection:last-child {
@@ -762,7 +762,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 10;
+            z-index: 3000;
+            pointer-events: auto;
         }
 
         .lightbox-close:hover {
@@ -1616,7 +1617,10 @@
             });
         });
 
-        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLightbox();
+        });
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 closeLightbox();
