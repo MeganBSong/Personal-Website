@@ -75,6 +75,15 @@
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
 
+        /* Navigation background colors based on section */
+        nav.bg-cream {
+            background: rgba(245, 240, 232, 0.95);
+        }
+
+        nav.bg-white {
+            background: rgba(253, 252, 250, 0.95);
+        }
+
         .logo {
             font-family: var(--font-display);
             font-size: 1.8rem;
@@ -1907,15 +1916,55 @@
     </div>
 
     <script>
-        // Navigation scroll effect
+        // Navigation scroll effect and background color change
         const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
+        
+        // Map sections to their background colors
+        const sectionBackgrounds = {
+            'introduction': 'cream',
+            'art': 'white',
+            'cello': 'cream',
+            'swimming': 'white',
+            'robotics': 'cream'
+        };
+
+        const updateNavBackground = () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            // Find which section is currently in view
+            let currentSection = 'introduction';
+            const sections = ['introduction', 'art', 'cello', 'swimming', 'robotics'];
+            
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = document.getElementById(sections[i]);
+                if (section) {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    // Check if section is in view (with some threshold)
+                    if (scrollY + 150 >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        currentSection = sections[i];
+                        break;
+                    }
+                }
+            }
+            
+            // Update nav background
+            const bgColor = sectionBackgrounds[currentSection] || 'cream';
+            nav.classList.remove('bg-cream', 'bg-white');
+            nav.classList.add(`bg-${bgColor}`);
+            
+            // Add scrolled class for styling
+            if (scrollY > 100) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
             }
-        });
+        };
+
+        window.addEventListener('scroll', updateNavBackground);
+        updateNavBackground(); // Initial call
 
         // Scroll reveal animation
         const revealElements = document.querySelectorAll('.scroll-reveal');
