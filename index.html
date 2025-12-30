@@ -1443,43 +1443,73 @@
             <!-- Jewelry Subsection -->
             <div class="art-subsection jewelry-subsection">
                 <h3 class="art-subsection-title">Jewelry</h3>
-                <div class="gallery-grid">
+                <div class="jewelry-list">
                     <!-- 
                         ADD YOUR JEWELRY ITEMS HERE
                         Copy this template for each piece:
                         
-                        <div class="gallery-item scroll-reveal"
-                             data-title="Jewelry Piece Name"
-                             data-date="Date Made"
-                             data-description="Description of the jewelry piece, materials used, inspiration, etc."
-                             data-materials="Materials used (e.g., Silver, beads, wire)"
-                             data-awards=""
-                             data-submissions="">
-                            <img src="images/jewelry-piece-name.jpg" alt="Jewelry piece">
-                            <div class="overlay">
-                                <h3>Jewelry Piece Name</h3>
-                                <p>Date Made</p>
+                        <div class="jewelry-item scroll-reveal">
+                            <div class="jewelry-text">
+                                <h4>Jewelry Piece Name</h4>
+                                <div class="jewelry-date">Date Made</div>
+                                <div class="jewelry-description">Description of the jewelry piece, materials used, inspiration, etc.</div>
+                                <div class="jewelry-materials">Materials used (e.g., Silver, beads, wire)</div>
+                            </div>
+                            <div class="jewelry-image">
+                                <img src="images/jewelry-piece-name.jpg" alt="Jewelry piece">
                             </div>
                         </div>
                     -->
                     
                     <!-- Placeholder items - replace with your actual jewelry pieces -->
-                    <div class="gallery-item scroll-reveal"
-                         data-title="Jewelry Piece"
-                         data-date="Date Made"
-                         data-description="Add a description of this jewelry piece here."
-                         data-materials="Materials used"
-                         data-awards=""
-                         data-submissions="">
-                        <div class="gallery-placeholder">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-                            </svg>
-                            <span>Add Jewelry Photo</span>
+                    <div class="jewelry-item scroll-reveal">
+                        <div class="jewelry-text">
+                            <h4>Jewelry Piece</h4>
+                            <div class="jewelry-date">Date Made</div>
+                            <div class="jewelry-description">Add a description of this jewelry piece here.</div>
+                            <div class="jewelry-materials">Materials used</div>
                         </div>
-                        <div class="overlay">
-                            <h3>Jewelry Piece</h3>
-                            <p>Date Made</p>
+                        <div class="jewelry-image">
+                            <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                                </svg>
+                                <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4;">Add Jewelry Photo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="jewelry-item scroll-reveal">
+                        <div class="jewelry-text">
+                            <h4>Jewelry Piece</h4>
+                            <div class="jewelry-date">Date Made</div>
+                            <div class="jewelry-description">Add a description of this jewelry piece here.</div>
+                            <div class="jewelry-materials">Materials used</div>
+                        </div>
+                        <div class="jewelry-image">
+                            <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                                </svg>
+                                <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4;">Add Jewelry Photo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="jewelry-item scroll-reveal">
+                        <div class="jewelry-text">
+                            <h4>Jewelry Piece</h4>
+                            <div class="jewelry-date">Date Made</div>
+                            <div class="jewelry-description">Add a description of this jewelry piece here.</div>
+                            <div class="jewelry-materials">Materials used</div>
+                        </div>
+                        <div class="jewelry-image">
+                            <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                                </svg>
+                                <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4;">Add Jewelry Photo</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1489,43 +1519,39 @@
             <!-- Wood Working Subsection -->
             <div class="art-subsection">
                 <h3 class="art-subsection-title">Wood Working</h3>
-                <div class="gallery-grid">
+                <div class="jewelry-list">
                     <!-- 
                         ADD YOUR WOOD WORKING ITEMS HERE
                         Copy this template for each piece:
                         
-                        <div class="gallery-item scroll-reveal"
-                             data-title="Wood Working Piece Name"
-                             data-date="Date Made"
-                             data-description="Description of the wood working piece, materials used, inspiration, etc."
-                             data-materials="Materials used (e.g., Oak, pine, varnish)"
-                             data-awards=""
-                             data-submissions="">
-                            <img src="images/wood-piece-name.jpg" alt="Wood working piece">
-                            <div class="overlay">
-                                <h3>Wood Working Piece Name</h3>
-                                <p>Date Made</p>
+                        <div class="jewelry-item scroll-reveal">
+                            <div class="jewelry-text">
+                                <h4>Wood Working Piece Name</h4>
+                                <div class="jewelry-date">Date Made</div>
+                                <div class="jewelry-description">Description of the wood working piece, materials used, techniques, etc.</div>
+                                <div class="jewelry-materials">Materials used (e.g., Oak, pine, finish)</div>
+                            </div>
+                            <div class="jewelry-image">
+                                <img src="images/wood-piece-name.jpg" alt="Wood working piece">
                             </div>
                         </div>
                     -->
                     
                     <!-- Placeholder items - replace with your actual wood working pieces -->
-                    <div class="gallery-item scroll-reveal"
-                         data-title="Wood Working Piece"
-                         data-date="Date Made"
-                         data-description="Add a description of this wood working piece here."
-                         data-materials="Materials used"
-                         data-awards=""
-                         data-submissions="">
-                        <div class="gallery-placeholder">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-                            </svg>
-                            <span>Add Wood Working Photo</span>
+                    <div class="jewelry-item scroll-reveal">
+                        <div class="jewelry-text">
+                            <h4>Wood Working Piece</h4>
+                            <div class="jewelry-date">Date Made</div>
+                            <div class="jewelry-description">Add a description of this wood working piece here.</div>
+                            <div class="jewelry-materials">Materials used</div>
                         </div>
-                        <div class="overlay">
-                            <h3>Wood Working Piece</h3>
-                            <p>Date Made</p>
+                        <div class="jewelry-image">
+                            <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                                </svg>
+                                <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4;">Add Wood Working Photo</span>
+                            </div>
                         </div>
                     </div>
                 </div>
