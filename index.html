@@ -132,7 +132,7 @@
 
         .section-title {
             font-family: var(--font-display);
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(4rem, 10vw, 8rem);
             font-weight: 300;
             margin-bottom: 1rem;
             opacity: 0;
@@ -141,7 +141,7 @@
         }
 
         .section-subtitle {
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--color-terracotta);
@@ -300,6 +300,11 @@
             animation: fadeInUp 1s ease forwards;
         }
 
+        /* Smaller font for Painting and Drawing subsection */
+        .art-subsection:first-of-type .art-subsection-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
         /* Jewelry Layout - Side by Side */
         .jewelry-list {
             display: flex;
@@ -387,6 +392,133 @@
                 flex: none;
                 width: 100%;
                 max-width: 500px;
+            }
+        }
+
+        /* Jewelry Layout - Single Image (text left, image right) */
+        .jewelry-single {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            background: var(--color-warm-white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .jewelry-single:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Jewelry Layout - Two Images Side by Side */
+        .jewelry-double {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .jewelry-double-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--color-cream);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .jewelry-double-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .jewelry-double-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Jewelry Layout - Three Images Side by Side */
+        .jewelry-triple {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .jewelry-triple-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--color-cream);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .jewelry-triple-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .jewelry-triple-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .jewelry-single {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .jewelry-double,
+            .jewelry-triple {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Wood Working Layout - Three Images Side by Side */
+        .wood-working-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .wood-working-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--color-cream);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            cursor: pointer;
+        }
+
+        .wood-working-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .wood-working-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .wood-working-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
 
@@ -494,7 +626,7 @@
 
         /* Cello Section */
         #cello {
-            background: linear-gradient(180deg, var(--color-cream) 0%, #E8E3DB 100%);
+            background: var(--color-cream);
         }
 
         .video-gallery {
@@ -565,7 +697,7 @@
 
         /* Swimming Section */
         #swimming {
-            background: linear-gradient(180deg, #E8E3DB 0%, var(--color-cream) 100%);
+            background: var(--color-warm-white);
         }
 
         .swim-gallery {
@@ -673,6 +805,111 @@
             height: 64px;
             margin-bottom: 1rem;
             stroke: currentColor;
+        }
+
+        /* Robotics Section */
+        #robotics {
+            background: var(--color-cream);
+        }
+
+        .robotics-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 2rem auto 0;
+        }
+
+        .robotics-item {
+            display: flex;
+            gap: 2rem;
+            background: var(--color-warm-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .robotics-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+
+        .robotics-info-panel {
+            flex: 0 0 350px;
+            padding: 2rem;
+            background: var(--color-warm-white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .robotics-info-panel h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--color-charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .robotics-info-panel .info-row {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(44, 44, 44, 0.1);
+        }
+
+        .robotics-info-panel .info-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .robotics-info-panel .info-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-terracotta);
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        .robotics-info-panel .info-value {
+            font-size: 1rem;
+            color: var(--color-charcoal);
+            line-height: 1.5;
+        }
+
+        .robotics-video-container {
+            flex: 1;
+            position: relative;
+            background: var(--color-charcoal);
+            min-height: 400px;
+        }
+
+        .robotics-video-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .robotics-item {
+                flex-direction: column;
+            }
+
+            .robotics-info-panel {
+                flex: none;
+            }
+
+            .robotics-video-container {
+                min-height: 300px;
+            }
+
+            .robotics-video-container iframe {
+                min-height: 300px;
+            }
         }
 
         /* Lightbox */
@@ -982,6 +1219,7 @@
             <li><a href="#art">Art</a></li>
             <li><a href="#cello">Cello</a></li>
             <li><a href="#swimming">Swimming</a></li>
+            <li><a href="#robotics">Robotics</a></li>
         </ul>
     </nav>
 
@@ -1199,9 +1437,9 @@
                 <div class="jewelry-list">
                     <!-- 
                         ADD YOUR JEWELRY ITEMS HERE
-                        Copy this template for each piece:
                         
-                        <div class="jewelry-item scroll-reveal">
+                        OPTION 1: Single image with text (text left, image right)
+                        <div class="jewelry-single scroll-reveal">
                             <div class="jewelry-text">
                                 <h4>Jewelry Piece Name</h4>
                                 <div class="jewelry-date">Date Made</div>
@@ -1212,10 +1450,33 @@
                                 <img src="images/jewelry-piece-name.jpg" alt="Jewelry piece">
                             </div>
                         </div>
+                        
+                        OPTION 2: Two images side by side
+                        <div class="jewelry-double scroll-reveal">
+                            <div class="jewelry-double-item">
+                                <img src="images/jewelry-piece-1.jpg" alt="Jewelry piece 1">
+                            </div>
+                            <div class="jewelry-double-item">
+                                <img src="images/jewelry-piece-2.jpg" alt="Jewelry piece 2">
+                            </div>
+                        </div>
+                        
+                        OPTION 3: Three images side by side
+                        <div class="jewelry-triple scroll-reveal">
+                            <div class="jewelry-triple-item">
+                                <img src="images/jewelry-piece-1.jpg" alt="Jewelry piece 1">
+                            </div>
+                            <div class="jewelry-triple-item">
+                                <img src="images/jewelry-piece-2.jpg" alt="Jewelry piece 2">
+                            </div>
+                            <div class="jewelry-triple-item">
+                                <img src="images/jewelry-piece-3.jpg" alt="Jewelry piece 3">
+                            </div>
+                        </div>
                     -->
                     
-                    <!-- Placeholder items - replace with your actual jewelry pieces -->
-                    <div class="jewelry-item scroll-reveal">
+                    <!-- Example: Single image with text -->
+                    <div class="jewelry-single scroll-reveal">
                         <div class="jewelry-text">
                             <h4>Jewelry Piece</h4>
                             <div class="jewelry-date">Date Made</div>
@@ -1232,14 +1493,9 @@
                         </div>
                     </div>
 
-                    <div class="jewelry-item scroll-reveal">
-                        <div class="jewelry-text">
-                            <h4>Jewelry Piece</h4>
-                            <div class="jewelry-date">Date Made</div>
-                            <div class="jewelry-description">Add a description of this jewelry piece here.</div>
-                            <div class="jewelry-materials">Materials used</div>
-                        </div>
-                        <div class="jewelry-image">
+                    <!-- Example: Two images side by side -->
+                    <div class="jewelry-double scroll-reveal">
+                        <div class="jewelry-double-item">
                             <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
@@ -1247,16 +1503,7 @@
                                 <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4;">Add Jewelry Photo</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="jewelry-item scroll-reveal">
-                        <div class="jewelry-text">
-                            <h4>Jewelry Piece</h4>
-                            <div class="jewelry-date">Date Made</div>
-                            <div class="jewelry-description">Add a description of this jewelry piece here.</div>
-                            <div class="jewelry-materials">Materials used</div>
-                        </div>
-                        <div class="jewelry-image">
+                        <div class="jewelry-double-item">
                             <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
@@ -1275,30 +1522,40 @@
                 <div class="jewelry-list">
                     <!-- 
                         ADD YOUR WOOD WORKING ITEMS HERE
-                        Copy this template for each piece:
+                        Use the triple layout (3 images side by side):
                         
-                        <div class="jewelry-item scroll-reveal">
-                            <div class="jewelry-text">
-                                <h4>Wood Working Piece Name</h4>
-                                <div class="jewelry-date">Date Made</div>
-                                <div class="jewelry-description">Description of the wood working piece, materials used, techniques, etc.</div>
-                                <div class="jewelry-materials">Materials used (e.g., Oak, pine, finish)</div>
+                        <div class="jewelry-triple scroll-reveal">
+                            <div class="jewelry-triple-item">
+                                <img src="images/wood-piece-1.jpg" alt="Wood working piece 1">
                             </div>
-                            <div class="jewelry-image">
-                                <img src="images/wood-piece-name.jpg" alt="Wood working piece">
+                            <div class="jewelry-triple-item">
+                                <img src="images/wood-piece-2.jpg" alt="Wood working piece 2">
+                            </div>
+                            <div class="jewelry-triple-item">
+                                <img src="images/wood-piece-3.jpg" alt="Wood working piece 3">
                             </div>
                         </div>
                     -->
                     
                     <!-- Placeholder items - replace with your actual wood working pieces -->
-                    <div class="jewelry-item scroll-reveal">
-                        <div class="jewelry-text">
-                            <h4>Wood Working Piece</h4>
-                            <div class="jewelry-date">Date Made</div>
-                            <div class="jewelry-description">Add a description of this wood working piece here.</div>
-                            <div class="jewelry-materials">Materials used</div>
+                    <div class="jewelry-triple scroll-reveal">
+                        <div class="jewelry-triple-item">
+                            <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                                </svg>
+                                <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4;">Add Wood Working Photo</span>
+                            </div>
                         </div>
-                        <div class="jewelry-image">
+                        <div class="jewelry-triple-item">
+                            <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                                </svg>
+                                <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4;">Add Wood Working Photo</span>
+                            </div>
+                        </div>
+                        <div class="jewelry-triple-item">
                             <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
@@ -1532,6 +1789,84 @@
         </div>
     </section>
 
+    <!-- Robotics Section -->
+    <section id="robotics">
+        <div class="gallery-container">
+            <p class="section-subtitle">Projects</p>
+            <h2 class="section-title">Robotics</h2>
+            
+            <div class="robotics-gallery">
+                <!-- 
+                    ADD YOUR ROBOTICS PROJECTS HERE
+                    Copy this template for each project:
+                    
+                    <div class="robotics-item scroll-reveal">
+                        <div class="robotics-info-panel">
+                            <h3>Project Name</h3>
+                            <div class="info-row">
+                                <div class="info-label">Competition/Event</div>
+                                <div class="info-value">Event Name</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Date</div>
+                                <div class="info-value">Date</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Role</div>
+                                <div class="info-value">Your Role</div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-label">Description</div>
+                                <div class="info-value">Project description and details</div>
+                            </div>
+                        </div>
+                        <div class="robotics-video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/VIDEO_ID" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                -->
+                
+                <!-- Example robotics item - replace with your actual projects -->
+                <div class="robotics-item scroll-reveal">
+                    <div class="robotics-info-panel">
+                        <h3>Project Name</h3>
+                        <div class="info-row">
+                            <div class="info-label">Competition/Event</div>
+                            <div class="info-value">Example Competition</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Date</div>
+                            <div class="info-value">Example Date</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Role</div>
+                            <div class="info-value">Your Role</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Description</div>
+                            <div class="info-value">Add a description of your robotics project here.</div>
+                        </div>
+                    </div>
+                    <div class="robotics-video-container">
+                        <div class="video-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                            </svg>
+                            <span>Add YouTube Video</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <p>Created with passion & creativity</p>
@@ -1734,6 +2069,8 @@
             'Art': 'art',
             'jewelry': 'art', // Jewelry is a subsection of art
             'Jewelry': 'art',
+            'robotics': 'robotics',
+            'Robotics': 'robotics',
             'cello': 'cello',
             'Cello': 'cello',
             'swimming': 'swimming',
