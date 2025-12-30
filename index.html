@@ -871,6 +871,13 @@
             box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
         }
 
+        .robotics-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-charcoal);
+            opacity: 0.8;
+        }
+
         .robotics-images {
             display: flex;
             flex-direction: column;
@@ -1881,6 +1888,19 @@
                     Copy this template for each project:
                     
                     <div class="robotics-item scroll-reveal">
+                        <div class="robotics-text">
+                            <p>Add your project description here.</p>
+                        </div>
+                        <div class="robotics-video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/VIDEO_ID" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                         <div class="robotics-images">
                             <div class="robotics-main-image">
                                 <img src="images/robotics-main-image.jpg" alt="Main robotics image">
@@ -1894,21 +1914,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="robotics-video-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/VIDEO_ID" 
-                                title="YouTube video player" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
                     </div>
                 -->
                 
                 <!-- Example robotics item - replace with your actual projects -->
                 <div class="robotics-item scroll-reveal">
+                    <div class="robotics-text">
+                        <p>Add your project description here. This text will appear at the top of the robotics project item.</p>
+                    </div>
+                    <div class="robotics-video-container">
+                        <div class="video-placeholder" style="width: 100%; height: 100%; aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--color-deep-teal), var(--color-charcoal)); color: white; opacity: 0.7;">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 64px; height: 64px; margin-bottom: 1rem; stroke: currentColor;">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                            </svg>
+                            <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;">Add YouTube Video</span>
+                        </div>
+                    </div>
                     <div class="robotics-images">
                         <div class="robotics-main-image">
                             <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
@@ -1935,14 +1956,6 @@
                                     <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4;">Add Portrait Image</span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="robotics-video-container">
-                        <div class="video-placeholder" style="width: 100%; height: 100%; aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--color-deep-teal), var(--color-charcoal)); color: white; opacity: 0.7;">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 64px; height: 64px; margin-bottom: 1rem; stroke: currentColor;">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                            </svg>
-                            <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;">Add YouTube Video</span>
                         </div>
                     </div>
                 </div>
