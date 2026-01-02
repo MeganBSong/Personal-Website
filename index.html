@@ -2049,7 +2049,7 @@
 
     <!-- Lightbox for images -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = '';">&times;</button>
         <div class="lightbox-container">
             <div class="lightbox-image-container">
                 <img src="" alt="Enlarged image" id="lightbox-image">
@@ -2218,41 +2218,57 @@
             });
         });
 
-        // Close button handler
+        // Close function
+        function closeLightbox() {
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close button handler - use multiple methods to ensure it works
         if (lightboxClose) {
+            // Method 1: Direct onclick
             lightboxClose.onclick = function(e) {
                 e.preventDefault();
                 e.stopPropagation();
+                e.stopImmediatePropagation();
                 closeLightbox();
                 return false;
             };
             
-            // Also add event listener as backup
+            // Method 2: Event listener with capture
+            lightboxClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                closeLightbox();
+            }, true);
+            
+            // Method 3: Event listener without capture
             lightboxClose.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 closeLightbox();
-            });
+            }, false);
         }
         
         // Close on background click
-        lightbox.addEventListener('click', (e) => {
-            // Only close if clicking directly on the lightbox background, not on children or close button
-            if (e.target === lightbox && !e.target.closest('.lightbox-close')) {
-                closeLightbox();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
+        if (lightbox) {
+            lightbox.addEventListener('click', (e) => {
+                // Only close if clicking directly on the lightbox background, not on children or close button
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
         }
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
 
         // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
