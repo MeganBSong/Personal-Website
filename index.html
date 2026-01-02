@@ -2180,8 +2180,8 @@
                 // Populate info panel
                 lightboxTitle.textContent = title;
                 lightboxMeta.textContent = date || 'Date not specified';
-                lightboxDescription.textContent = description || 'No description available.';
-                lightboxMaterials.textContent = materials || 'Materials not specified';
+                lightboxDescription.innerHTML = description || 'No description available.';
+                lightboxMaterials.innerHTML = materials || 'Materials not specified';
 
                 // Handle awards
                 if (awards.length > 0 && awards[0].trim()) {
