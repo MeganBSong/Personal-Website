@@ -344,6 +344,12 @@
             min-width: 0;
         }
 
+        /* Wood working - smaller text section */
+        .jewelry-item .jewelry-text.wood-working-text {
+            flex: 0 0 300px;
+            max-width: 300px;
+        }
+
         .jewelry-text h4 {
             font-family: var(--font-display);
             font-size: 1.8rem;
@@ -403,6 +409,17 @@
 
         .jewelry-image.multi-image.three-images {
             grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Wood working images - clickable */
+        .jewelry-image.multi-image img {
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .jewelry-image.multi-image img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
         }
 
         .jewelry-image.multi-image img {
@@ -1141,6 +1158,66 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
+        /* Simple image lightbox for wood working */
+        .image-lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .image-lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .image-lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .image-lightbox.active img {
+            transform: scale(1);
+        }
+
+        .image-lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3001;
+            pointer-events: auto !important;
+        }
+
+        .image-lightbox-close:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
         @media (max-width: 1024px) {
             .lightbox-container {
                 flex-direction: column;
@@ -1612,35 +1689,28 @@
                         Copy this template for each piece:
                         
                         <div class="jewelry-item scroll-reveal">
-                            <div class="jewelry-text">
+                            <div class="jewelry-text wood-working-text">
                                 <h4>Wood Working Piece Name</h4>
                                 <div class="jewelry-date">Date Made</div>
                                 <div class="jewelry-description">Description of the wood working piece, materials used, techniques, etc.</div>
                                 <div class="jewelry-materials">Materials used (e.g., Oak, pine, finish)</div>
                             </div>
-                            <div class="jewelry-image multi-image three-images">
+                            <div class="jewelry-image multi-image two-images">
                                 <img src="images/wood-piece-1.jpg" alt="Wood working piece 1">
                                 <img src="images/wood-piece-2.jpg" alt="Wood working piece 2">
-                                <img src="images/wood-piece-3.jpg" alt="Wood working piece 3">
                             </div>
                         </div>
                     -->
                     
                     <!-- Placeholder items - replace with your actual wood working pieces -->
                     <div class="jewelry-item scroll-reveal">
-                        <div class="jewelry-text">
+                        <div class="jewelry-text wood-working-text">
                             <h4>Wood Working Piece</h4>
                             <div class="jewelry-date">Date Made</div>
                             <div class="jewelry-description">Add a description of this wood working piece here.</div>
                             <div class="jewelry-materials">Materials used</div>
                         </div>
-                        <div class="jewelry-image multi-image three-images">
-                            <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-                                </svg>
-                                <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4;">Add Wood Working Photo</span>
-                            </div>
+                        <div class="jewelry-image multi-image two-images">
                             <div class="gallery-placeholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--color-cream);">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 1rem; stroke: currentColor; opacity: 0.4;">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
@@ -2062,6 +2132,12 @@
         <p>Created with passion & creativity</p>
     </footer>
 
+    <!-- Simple image lightbox for wood working -->
+    <div class="image-lightbox" id="image-lightbox">
+        <button class="image-lightbox-close" onclick="document.getElementById('image-lightbox').classList.remove('active'); document.body.style.overflow = '';">&times;</button>
+        <img src="" alt="Enlarged image" id="image-lightbox-img">
+    </div>
+
     <!-- Lightbox for images -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = '';">&times;</button>
@@ -2282,6 +2358,63 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
                 closeLightbox();
+            }
+        });
+
+        // Simple image lightbox for wood working images
+        const imageLightbox = document.getElementById('image-lightbox');
+        const imageLightboxImg = document.getElementById('image-lightbox-img');
+        const imageLightboxClose = document.querySelector('.image-lightbox-close');
+
+        // Handle clicks on wood working images
+        document.querySelectorAll('.jewelry-item .jewelry-image.multi-image img').forEach(img => {
+            img.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                imageLightboxImg.src = this.src;
+                imageLightboxImg.alt = this.alt;
+                imageLightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close image lightbox
+        function closeImageLightbox() {
+            if (imageLightbox) {
+                imageLightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close button handler for image lightbox
+        if (imageLightboxClose) {
+            imageLightboxClose.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeImageLightbox();
+                return false;
+            };
+            
+            imageLightboxClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeImageLightbox();
+            }, true);
+        }
+
+        // Close image lightbox on background click
+        if (imageLightbox) {
+            imageLightbox.addEventListener('click', (e) => {
+                if (e.target === imageLightbox) {
+                    closeImageLightbox();
+                }
+            });
+        }
+
+        // Close image lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && imageLightbox && imageLightbox.classList.contains('active')) {
+                closeImageLightbox();
             }
         });
 
